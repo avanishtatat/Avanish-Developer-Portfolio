@@ -12,10 +12,10 @@ import Footer from "@/components/portfolio/Footer";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Alex Chen — Full Stack Software Engineer";
+    document.title = "Avanish Tiwari — Full Stack Developer";
     const meta = document.querySelector('meta[name="description"]');
     const content =
-      "Alex Chen — Full Stack Software Engineer crafting modern web experiences with React, Node.js, TypeScript, and PostgreSQL.";
+      "Avanish Tiwari is a Full Stack Developer skilled in React.js, Node.js, JavaScript, MongoDB, and modern web technologies. Explore projects, skills, and experience.";
     if (meta) meta.setAttribute("content", content);
     else {
       const m = document.createElement("meta");

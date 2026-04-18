@@ -2,7 +2,20 @@ import { motion } from "framer-motion";
 import {
   SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss, SiReactrouter,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiSqlite, SiPython,
+  SiMysql,
+  SiJsonwebtokens,
+  SiSecurityscorecard,
+  SiFiles,
+  SiStyledcomponents,
+  SiGit,
+  SiGithub,
+  SiRedux,
+  SiNetlify,
+  SiRender,
+  SiVercel,
+  SiChartdotjs
 } from "react-icons/si";
+import { FaFileExcel } from "react-icons/fa"
 import { TbApi } from "react-icons/tb";
 
 const categories = [
@@ -10,12 +23,15 @@ const categories = [
     title: "Frontend",
     color: "from-neon-cyan to-neon-blue",
     skills: [
-      { name: "React", Icon: SiReact, color: "#61DAFB" },
-      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "React.js", Icon: SiReact, color: "#61DAFB" },
       { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
       { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", Icon: SiCss, color: "#1572B6" },
+      { name: "Flexbox", Icon: SiCss, color: "#1572B6" },
+      { name: "Responsive Design", Icon: SiCss, color: "#1572B6" },
       { name: "React Router", Icon: SiReactrouter, color: "#CA4245" },
+      { name: "Context API", Icon: SiReact, color: "#61DAFB" },
+      { name: "Styled Components", Icon: SiStyledcomponents, color: "#DB7093" },
     ],
   },
   {
@@ -24,7 +40,10 @@ const categories = [
     skills: [
       { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
       { name: "Express.js", Icon: SiExpress, color: "#FFFFFF" },
-      { name: "REST API", Icon: TbApi, color: "#00E5FF" },
+      { name: "REST APIs", Icon: TbApi, color: "#00E5FF" },
+      { name: "JWT Auth", Icon: SiJsonwebtokens, color: "#FFB300" },
+      { name: "bcrypt", Icon: SiSecurityscorecard, color: "#00C853" },
+      { name: "multer", Icon: SiFiles, color: "#FF7043" },
     ],
   },
   {
@@ -33,14 +52,23 @@ const categories = [
     skills: [
       { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
       { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
+      { name: "SQL", Icon: SiMysql, color: "#4479A1" },
       { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
     ],
   },
   {
-    title: "Other",
+    title: "Tools & Deployment",
     color: "from-neon-pink to-neon-cyan",
     skills: [
+      { name: "Git", Icon: SiGit, color: "#F05032" },
+      { name: "GitHub", Icon: SiGithub, color: "#FFFFFF" },
+      { name: "Redux Toolkit", Icon: SiRedux, color: "#764ABC" },
       { name: "Python", Icon: SiPython, color: "#3776AB" },
+      { name: "Recharts", Icon: SiChartdotjs, color: "#FF6384" },
+      { name: "xlsx", Icon: FaFileExcel, color: "#217346" },
+      { name: "Vercel", Icon: SiVercel, color: "#FFFFFF" },
+      { name: "Render", Icon: SiRender, color: "#46E3B7" },
+      { name: "Netlify", Icon: SiNetlify, color: "#00C7B7" },
     ],
   },
 ];

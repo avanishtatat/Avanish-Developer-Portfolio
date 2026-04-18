@@ -1,6 +1,14 @@
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Send, Mail, Github, Linkedin, MapPin, CheckCircle2 } from "lucide-react";
+import {
+  Send,
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  CheckCircle2,
+} from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -8,16 +16,29 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const handle = (e: React.FormEvent) => {
+  const handle = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+    setSent(true);
+    toast.success("Message sent! I'll be in touch shortly.");
+    setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
       setSending(false);
-      setSent(true);
-      toast.success("Message sent! I'll be in touch shortly.");
-      setForm({ name: "", email: "", message: "" });
       setTimeout(() => setSent(false), 3000);
-    }, 1200);
+    }
   };
 
   return (
@@ -30,12 +51,15 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mb-16"
         >
-          <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">05 — Contact</span>
+          <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">
+            05 — Contact
+          </span>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">
             Let's build something <span className="neon-text">amazing</span>.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Have a project in mind, or just want to say hi? My inbox is always open.
+            Have a project in mind, or just want to say hi? My inbox is always
+            open.
           </p>
         </motion.div>
 
@@ -48,10 +72,30 @@ const Contact = () => {
             className="space-y-4"
           >
             {[
-              { Icon: Mail, label: "Email", value: "hello@alexchen.dev", href: "mailto:hello@alexchen.dev" },
-              { Icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
-              { Icon: Github, label: "GitHub", value: "@alexchen", href: "https://github.com" },
-              { Icon: Linkedin, label: "LinkedIn", value: "in/alexchen", href: "https://linkedin.com" },
+              {
+                Icon: Mail,
+                label: "Email",
+                value: "avanisht.at.at@gmail.com",
+                href: "mailto:avanisht.at.at@gmail.com",
+              },
+              {
+                Icon: MapPin,
+                label: "Location",
+                value: "Chandauli, Uttar Pradesh, India",
+                href: "#",
+              },
+              {
+                Icon: Github,
+                label: "GitHub",
+                value: "@avanishtatat",
+                href: "https://github.com/avanishtatat",
+              },
+              {
+                Icon: Linkedin,
+                label: "LinkedIn",
+                value: "linkedin.com/in/avanishtiwari18",
+                href: "https://www.linkedin.com/in/avanishtiwari18/",
+              },
             ].map(({ Icon, label, value, href }) => (
               <a
                 key={label}
@@ -64,7 +108,9 @@ const Contact = () => {
                   <Icon className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div className="min-w-0">
-                  <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">{label}</div>
+                  <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                    {label}
+                  </div>
                   <div className="font-medium truncate">{value}</div>
                 </div>
               </a>
@@ -80,8 +126,18 @@ const Contact = () => {
             className="glass-strong rounded-2xl p-7 space-y-5"
           >
             {[
-              { id: "name", label: "Your Name", type: "text", placeholder: "Jane Doe" },
-              { id: "email", label: "Email Address", type: "email", placeholder: "jane@example.com" },
+              {
+                id: "name",
+                label: "Your Name",
+                type: "text",
+                placeholder: "Jane Doe",
+              },
+              {
+                id: "email",
+                label: "Email Address",
+                type: "email",
+                placeholder: "jane@example.com",
+              },
             ].map((f) => (
               <div key={f.id} className="group">
                 <label className="block font-mono text-xs text-muted-foreground uppercase tracking-wider mb-2">

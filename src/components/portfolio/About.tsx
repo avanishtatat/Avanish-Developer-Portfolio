@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Coffee, Award } from "lucide-react";
 
 const stats = [
-  { Icon: Briefcase, label: "Projects Shipped", value: "40+" },
-  { Icon: Coffee, label: "Cups of Coffee", value: "2.4k" },
-  { Icon: Award, label: "Years Coding", value: "5+" },
-  { Icon: GraduationCap, label: "Degree", value: "B.S. CS" },
+  { Icon: Briefcase, label: "Projects Built", value: "10+" },
+  { Icon: Award, label: "Days of Coding", value: "180+" },
+  { Icon: GraduationCap, label: "Degree", value: "B.Com" },
+  { Icon: Coffee, label: "Tech Stack", value: "MERN" },
 ];
 
 const About = () => {
@@ -39,14 +39,20 @@ const About = () => {
               how things work — and never stopped.
             </p>
             <p>
-              I graduated with a <span className="text-foreground font-medium">Bachelor's in Computer Science</span>,
-              where I built a strong foundation in algorithms, systems design, and software
-              engineering principles. Today, I architect end-to-end solutions across the modern
-              web stack.
+              I completed a <span className="text-foreground font-medium">Bachelor of Commerce</span> 
+              degree and later transitioned into software development through <span className="text-foreground font-medium">NxtWave’s CCBP 4.0 Intensive</span> program,
+               where I built a strong foundation in frontend and backend technologies. Today, I 
+              develop end-to-end applications using React.js, Node.js, JavaScript, HTML, CSS, MongoDB, and
+               REST APIs.
             </p>
             <p>
-              When I'm not shipping code, you'll find me contributing to open source, mentoring
-              junior devs, or exploring the intersection of design and engineering.
+              I enjoy creating responsive interfaces, secure backend systems, and smooth user experiences. 
+              Through personal projects and consistent coding practice, I continue improving my problem-solving 
+              skills and development standards.
+            </p>
+            <p>
+              When I'm not coding, you'll usually find me learning new technologies, refining projects, exploring
+               AI tools, or working on ideas that combine design with engineering.
             </p>
           </motion.div>
 

@@ -59,7 +59,7 @@ const Hero = () => {
             className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight text-balance"
           >
             Hi, I'm{" "}
-            <span className="neon-text">Alex Chen</span>
+            <span className="neon-text">Avanish Tiwari</span>
             <br />
             building the{" "}
             <span className="relative inline-block">
@@ -94,9 +94,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
           >
-            I craft high-performance web applications that blend elegant design with robust
-            engineering. Specializing in scalable React frontends, type-safe APIs, and seamless
-            user experiences.
+            Full Stack Developer building modern web applications with React.js, Node.js, and JavaScript. I create responsive interfaces, secure APIs, and practical digital solutions backed by hands-on project experience and continuous learning.
           </motion.p>
 
           <motion.div
@@ -130,9 +128,9 @@ const Hero = () => {
             <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Find me</span>
             <div className="h-px w-10 bg-border" />
             {[
-              { Icon: Github, href: "https://github.com" },
-              { Icon: Linkedin, href: "https://linkedin.com" },
-              { Icon: Mail, href: "mailto:hello@example.com" },
+              { Icon: Github, href: "https://github.com/avanishtatat" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/avanishtiwari18" },
+              { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com" },
             ].map(({ Icon, href }, i) => (
               <a
                 key={i}
@@ -163,9 +161,9 @@ const Hero = () => {
               </div>
               <pre className="font-mono text-xs leading-relaxed text-muted-foreground">
 {`const dev = {
-  name: "Alex Chen",
+  name: "Avanish Tiwari",
   stack: ["React", "Node",
-    "TypeScript", "Postgres"],
+    "JavaScript", "MongoDB"],
   passion: "building",
   coffee: Infinity,
   available: true,
