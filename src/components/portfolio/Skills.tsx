@@ -27,6 +27,7 @@ const categories = [
       { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
       { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", Icon: SiCss, color: "#1572B6" },
+      {name: "Tailwind CSS", Icon: SiCss, color: "#38B2AC"},
       { name: "Flexbox", Icon: SiCss, color: "#1572B6" },
       { name: "Responsive Design", Icon: SiCss, color: "#1572B6" },
       { name: "React Router", Icon: SiReactrouter, color: "#CA4245" },
