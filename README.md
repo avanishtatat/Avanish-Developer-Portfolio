@@ -6,9 +6,7 @@ This project showcases my profile, skills, projects, experience, and a working c
 
 ## Live Preview
 
-Add your deployed URL here:
-
-- https://your-portfolio-domain.com
+-https://avanishtiwari.vercel.app
 
 ## Highlights
 
