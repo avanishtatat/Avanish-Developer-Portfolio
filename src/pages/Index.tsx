@@ -1,16 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import LoadingScreen from "@/components/portfolio/LoadingScreen";
+import ParticleBackground from "@/components/portfolio/ParticleBackground";
+import Navbar from "@/components/portfolio/Navbar";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Skills from "@/components/portfolio/Skills";
+import Projects from "@/components/portfolio/Projects";
+import Experience from "@/components/portfolio/Experience";
+import Contact from "@/components/portfolio/Contact";
+import Footer from "@/components/portfolio/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "Alex Chen — Full Stack Software Engineer";
+    const meta = document.querySelector('meta[name="description"]');
+    const content =
+      "Alex Chen — Full Stack Software Engineer crafting modern web experiences with React, Node.js, TypeScript, and PostgreSQL.";
+    if (meta) meta.setAttribute("content", content);
+    else {
+      const m = document.createElement("meta");
+      m.name = "description";
+      m.content = content;
+      document.head.appendChild(m);
+    }
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = window.location.origin + "/";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <LoadingScreen />
+      <ParticleBackground />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
