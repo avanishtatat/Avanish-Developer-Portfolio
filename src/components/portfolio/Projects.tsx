@@ -76,6 +76,28 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "CodeBuddy – AI Coding Assistant",
+    description:
+      "A full-stack AI coding assistant for developers with JWT auth, conversation memory, persistent chat history with pagination, and syntax-highlighted markdown rendering.",
+    tags: ["React", "Node.js", "MongoDB", "Groq AI"],
+    category: "Full Stack",
+    demo: "https://avanish-codebuddy.vercel.app",
+    repo: "https://github.com/avanishtatat/codebuddy",
+    gradient: "from-neon-blue via-neon-cyan to-neon-purple",
+    emoji: "💻",
+  },
+  {
+    title: "Voice AI Agent – Doctor Appointment System",
+    description:
+      "A production-ready FastAPI backend for booking, cancelling, and rescheduling doctor appointments with PostgreSQL, Docker, and full REST API support.",
+    tags: ["FastAPI", "PostgreSQL", "Docker", "Python"],
+    category: "Backend",
+    demo: "https://voice-ai-agent-6e7o.onrender.com/docs",
+    repo: "https://github.com/avanishtatat/voice-ai-agent",
+    gradient: "from-neon-purple via-neon-pink to-neon-cyan",
+    emoji: "🎙️",
+  },
+  {
     title: "PearMedia AI Studio",
     description:
       "A full-stack AI media platform for prompt enhancement, image generation, and creative image variations using secure API integrations.",
@@ -147,7 +169,8 @@ const filters = ["All", "Full Stack", "Frontend", "Backend"];
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
-  const filtered = filter === "All" ? projects : projects.filter((p) => p.category === filter);
+  const filtered =
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="relative py-28">
@@ -160,7 +183,9 @@ const Projects = () => {
           className="flex flex-wrap items-end justify-between gap-6 mb-12"
         >
           <div className="max-w-2xl">
-            <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">03 — Projects</span>
+            <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">
+              03 — Projects
+            </span>
             <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">
               Selected <span className="neon-text">work</span>.
             </h2>
@@ -172,7 +197,9 @@ const Projects = () => {
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`relative px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filter === f ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  filter === f
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {filter === f && (
@@ -200,7 +227,9 @@ const Projects = () => {
               whileHover={{ y: -8 }}
               className="group relative glass rounded-2xl overflow-hidden flex flex-col"
             >
-              <div className={`relative h-44 bg-gradient-to-br ${p.gradient} overflow-hidden`}>
+              <div
+                className={`relative h-44 bg-gradient-to-br ${p.gradient} overflow-hidden`}
+              >
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 <div className="absolute inset-0 flex items-center justify-center text-7xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                   {p.emoji}
