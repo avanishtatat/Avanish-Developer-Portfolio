@@ -16,28 +16,37 @@ const Hero = () => {
 
   useEffect(() => {
     const current = roles[idx];
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        setText(current.slice(0, text.length + 1));
-        if (text === current) {
-          setTimeout(() => setDeleting(true), 1800);
+    const timeout = setTimeout(
+      () => {
+        if (!deleting) {
+          setText(current.slice(0, text.length + 1));
+          if (text === current) {
+            setTimeout(() => setDeleting(true), 1800);
+          }
+        } else {
+          setText(current.slice(0, text.length - 1));
+          if (text === "") {
+            setDeleting(false);
+            setIdx((idx + 1) % roles.length);
+          }
         }
-      } else {
-        setText(current.slice(0, text.length - 1));
-        if (text === "") {
-          setDeleting(false);
-          setIdx((idx + 1) % roles.length);
-        }
-      }
-    }, deleting ? 50 : 100);
+      },
+      deleting ? 50 : 100,
+    );
     return () => clearTimeout(timeout);
   }, [text, deleting, idx]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-24 overflow-hidden"
+    >
       <div className="absolute inset-0 grid-bg opacity-40" />
       <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-neon-purple/20 blur-[120px] animate-glow-pulse" />
-      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-neon-cyan/20 blur-[120px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
+      <div
+        className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-neon-cyan/20 blur-[120px] animate-glow-pulse"
+        style={{ animationDelay: "1.5s" }}
+      />
 
       <div className="container relative z-10 grid lg:grid-cols-[1fr_auto] gap-12 items-center">
         <div className="max-w-3xl">
@@ -48,7 +57,9 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 font-mono text-xs"
           >
             <Sparkles className="w-3.5 h-3.5 text-neon-cyan" />
-            <span className="text-muted-foreground">Available for freelance & full-time</span>
+            <span className="text-muted-foreground">
+              Available for freelance & full-time
+            </span>
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           </motion.div>
 
@@ -58,14 +69,22 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight text-balance"
           >
-            Hi, I'm{" "}
-            <span className="neon-text">Avanish Tiwari</span>
+            Hi, I'm <span className="neon-text">Avanish Tiwari</span>
             <br />
             building the{" "}
             <span className="relative inline-block">
               <span className="neon-text">future</span>
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                <path d="M2 5 Q 100 -2 198 5" stroke="url(#grad)" strokeWidth="2" strokeLinecap="round" />
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 8"
+                fill="none"
+              >
+                <path
+                  d="M2 5 Q 100 -2 198 5"
+                  stroke="url(#grad)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
                 <defs>
                   <linearGradient id="grad" x1="0" y1="0" x2="200" y2="0">
                     <stop offset="0%" stopColor="hsl(190 100% 55%)" />
@@ -94,7 +113,10 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
           >
-            Full Stack Developer building modern web applications with React.js, Node.js, and JavaScript. I create responsive interfaces, secure APIs, and practical digital solutions backed by hands-on project experience and continuous learning.
+            Full Stack Developer building production-ready web applications with
+            React.js, Node.js, and JavaScript. I architect responsive
+            interfaces, secure REST APIs, and deploy full-stack applications on
+            AWS EC2 — backed by real-world projects and continuous learning.
           </motion.p>
 
           <motion.div
@@ -125,11 +147,16 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-10 flex items-center gap-4"
           >
-            <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Find me</span>
+            <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
+              Find me
+            </span>
             <div className="h-px w-10 bg-border" />
             {[
               { Icon: Github, href: "https://github.com/avanishtatat" },
-              { Icon: Linkedin, href: "https://www.linkedin.com/in/avanishtiwari18" },
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/in/avanishtiwari18",
+              },
               { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com" },
             ].map(({ Icon, href }, i) => (
               <a
@@ -160,7 +187,7 @@ const Hero = () => {
                 <span className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               <pre className="font-mono text-xs leading-relaxed text-muted-foreground">
-{`const dev = {
+                {`const dev = {
   name: "Avanish Tiwari",
   stack: ["React", "Node",
     "JavaScript", "MongoDB"],

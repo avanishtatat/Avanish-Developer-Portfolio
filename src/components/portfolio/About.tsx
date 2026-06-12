@@ -19,9 +19,12 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mb-16"
         >
-          <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">01 — About</span>
+          <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">
+            01 — About
+          </span>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">
-            Engineer by craft, <span className="neon-text">creator</span> by passion.
+            Engineer by craft, <span className="neon-text">creator</span> by
+            passion.
           </h2>
         </motion.div>
 
@@ -34,25 +37,37 @@ const About = () => {
             className="space-y-5 text-muted-foreground leading-relaxed text-lg"
           >
             <p>
-              I'm a Full Stack Software Engineer with a passion for transforming complex problems
-              into elegant, performant digital experiences. My journey started with a curiosity for
-              how things work — and never stopped.
+              I'm a Full Stack Software Engineer with a passion for transforming
+              complex problems into elegant, performant digital experiences. My
+              journey started with a curiosity for how things work — and never
+              stopped.
             </p>
             <p>
-              I completed a <span className="text-foreground font-medium">Bachelor of Commerce</span> 
-              degree and later transitioned into software development through <span className="text-foreground font-medium">NxtWave’s CCBP 4.0 Intensive</span> program,
-               where I built a strong foundation in frontend and backend technologies. Today, I 
-              develop end-to-end applications using React.js, Node.js, JavaScript, HTML, CSS, MongoDB, and
-               REST APIs.
+              I completed a{" "}
+              <span className="text-foreground font-medium">
+                Bachelor of Commerce
+              </span>
+              degree and later transitioned into software development through{" "}
+              <span className="text-foreground font-medium">
+                NxtWave’s CCBP 4.0 Intensive
+              </span>{" "}
+              program, where I built a strong foundation in frontend and backend
+              technologies. Today, I develop end-to-end applications using
+              React.js, Node.js, JavaScript, HTML, CSS, MongoDB, and REST APIs.
             </p>
             <p>
-              I enjoy creating responsive interfaces, secure backend systems, and smooth user experiences. 
-              Through personal projects and consistent coding practice, I continue improving my problem-solving 
-              skills and development standards.
+              I enjoy creating responsive interfaces, secure backend systems,
+              and smooth user experiences. My recent work includes Razorpay
+              payment integration, AWS EC2 deployment with Nginx reverse proxy
+              and PM2 process management, and AI API integrations using Groq and
+              Google Gemini. Through personal projects and consistent coding
+              practice, I continue improving my problem-solving skills and
+              development standards.
             </p>
             <p>
-              When I'm not coding, you'll usually find me learning new technologies, refining projects, exploring
-               AI tools, or working on ideas that combine design with engineering.
+              When I'm not coding, you'll usually find me learning new
+              technologies, refining projects, exploring AI tools, or working on
+              ideas that combine design with engineering.
             </p>
           </motion.div>
 
@@ -72,7 +87,9 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
                 <Icon className="w-7 h-7 text-neon-cyan mb-4 group-hover:text-neon-purple transition-colors duration-500" />
                 <div className="font-display text-3xl font-bold">{value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{label}</div>
+                <div className="text-sm text-muted-foreground mt-1">
+                  {label}
+                </div>
               </motion.div>
             ))}
           </motion.div>

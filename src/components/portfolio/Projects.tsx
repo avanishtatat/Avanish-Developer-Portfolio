@@ -76,6 +76,26 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "NxtTrendz – Full Stack E-Commerce Platform",
+    description:
+      "A production-ready e-commerce platform featuring JWT authentication, Razorpay payment integration, prime subscriptions, persistent cart management, and deployment on AWS EC2 using Nginx, PM2, and MongoDB Atlas.",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS EC2",
+      "Nginx",
+      "PM2",
+      "Razorpay",
+    ],
+    category: "Full Stack",
+    demo: "http://13.207.106.94",
+    repo: "https://github.com/avanishtatat/nxttrendz",
+    gradient: "from-neon-pink to-neon-cyan",
+    emoji: "🛒",
+  },
+  {
     title: "CodeBuddy – AI Coding Assistant",
     description:
       "A full-stack AI coding assistant for developers with JWT auth, conversation memory, persistent chat history with pagination, and syntax-highlighted markdown rendering.",
@@ -118,17 +138,6 @@ const projects: Project[] = [
     repo: "https://github.com/avanishtatat/EXPENSE-TRACKER",
     gradient: "from-neon-purple to-neon-pink",
     emoji: "💰",
-  },
-  {
-    title: "NxtTrendz E-Commerce",
-    description:
-      "A complete e-commerce web application with authentication, product filtering, search functionality, and dynamic cart management.",
-    tags: ["React", "REST API", "JWT", "Context API"],
-    category: "Frontend",
-    demo: "https://avanishnxttrend.ccbp.tech/",
-    repo: "https://github.com/avanishtatat/nxttrendz",
-    gradient: "from-neon-pink to-neon-cyan",
-    emoji: "🛒",
   },
   {
     title: "Jobby App (Job Search Platform)",

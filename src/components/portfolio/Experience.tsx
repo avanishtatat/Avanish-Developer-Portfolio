@@ -7,7 +7,7 @@ const items = [
     date: "Jun 2025 — Present",
     title: "Full Stack Development Trainee",
     org: "NxtWave CCBP 4.0 Intensive",
-    desc: "Completed hands-on training in React.js, Node.js, JavaScript, databases, and modern web development. Built real-world projects and earned the Industry Ready Certificate (IRC).",
+    desc: "Completed hands-on training in React.js, Node.js, JavaScript, databases, and modern web development. Built production-ready full-stack applications with AWS EC2 deployment, Razorpay payment integration, and AI API integrations. Earned the Industry Ready Certificate (IRC).",
     color: "from-neon-cyan to-neon-purple",
   },
   {
