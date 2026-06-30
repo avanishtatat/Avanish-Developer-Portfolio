@@ -126,7 +126,7 @@ const Projects = () => {
         >
           <div className="max-w-2xl">
             <span className="font-mono text-xs text-neon-cyan uppercase tracking-widest">
-              03 — Projects
+              02 — Projects
             </span>
 
             <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">
