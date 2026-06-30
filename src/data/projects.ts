@@ -36,7 +36,7 @@ export const projects: Project[] = [
     origin: "Assignment",
     featured: true,
     links: {
-      live: "ADD_LIVE_URL_HERE",
+      live: "https://ai-travel-planner-beta-orpin.vercel.app",
       github: "https://github.com/avanishtatat/ai-travel-planner",
     },
     gradient: "from-neon-blue via-neon-cyan to-neon-purple",
