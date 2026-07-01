@@ -73,11 +73,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           {project.links.live && (
             <a
               href={project.links.live}
+              aria-label={`Open live demo for ${project.title}`}
               target="_blank"
               rel="noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:shadow-neon-cyan transition-all"
             >
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
               Live
             </a>
           )}
@@ -85,11 +86,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           {project.links.github && (
             <a
               href={project.links.github}
+              aria-label={`View source code for ${project.title} on GitHub`}
               target="_blank"
               rel="noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg glass border border-border px-4 py-2.5 text-sm font-semibold hover:border-neon-purple transition-colors"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4" aria-hidden="true" />
               Code
             </a>
           )}

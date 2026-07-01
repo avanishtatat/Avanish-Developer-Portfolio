@@ -73,6 +73,7 @@ const SkillChip = ({ skill, index }: SkillChipProps) => {
       <Icon
         className="w-4 h-4 transition-transform duration-300 group-hover:scale-110"
         style={{ color: skill.iconColor }}
+        aria-hidden="true"
       />
       <span className="font-mono text-xs text-muted-foreground group-hover:text-foreground transition-colors">
         {skill.name}
@@ -107,7 +108,7 @@ const SkillCategoryCard = ({ category, index }: SkillCategoryCardProps) => {
             <div
               className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.categoryGradient} flex items-center justify-center shadow-glass`}
             >
-              <CategoryIcon className="w-5 h-5 text-background" />
+              <CategoryIcon className="w-5 h-5 text-background" aria-hidden="true" />
             </div>
 
             <h3 className="font-display text-xl sm:text-2xl font-bold">

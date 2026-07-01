@@ -79,7 +79,7 @@ const Contact = () => {
           >
             <div className="glass rounded-2xl p-5 flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+                <Sparkles className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
               </div>
 
               <div>
@@ -94,7 +94,7 @@ const Contact = () => {
               const content = (
                 <>
                   <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:shadow-neon-cyan transition-shadow">
-                    <Icon className="w-5 h-5 text-primary-foreground" />
+                    <Icon className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
                   </div>
 
                   <div className="min-w-0">
@@ -121,6 +121,7 @@ const Contact = () => {
                 <a
                   key={title}
                   href={href}
+                  aria-label={`Contact via ${title}`}
                   target={href.startsWith("mailto:") ? undefined : "_blank"}
                   rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
                   className="group flex items-center gap-4 glass rounded-2xl p-5 hover:bg-muted/50 transition-all duration-300 hover:translate-x-1"
@@ -214,16 +215,16 @@ const Contact = () => {
             >
               {sent ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4" /> Sent!
+                  <CheckCircle2 className="w-4 h-4" aria-hidden="true" /> Sent!
                 </>
               ) : sending ? (
                 <>
-                  <span className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                  <span className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" aria-hidden="true" />
                   Sending...
                 </>
               ) : (
                 <>
-                  Send Message <Send className="w-4 h-4" />
+                  Send Message <Send className="w-4 h-4" aria-hidden="true" />
                 </>
               )}
             </button>

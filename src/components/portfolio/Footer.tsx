@@ -13,18 +13,19 @@ const Footer = () => {
 
         <div className="flex items-center gap-3">
           {[
-            { Icon: Github, href: "https://github.com/avanishtatat" },
-            { Icon: Linkedin, href: "https://linkedin.com/in/avanishtiwari18" },
-            { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com" },
-          ].map(({ Icon, href }, i) => (
+            { Icon: Github, href: "https://github.com/avanishtatat", label: "Visit GitHub Profile" },
+            { Icon: Linkedin, href: "https://linkedin.com/in/avanishtiwari18", label: "Visit LinkedIn Profile" },
+            { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com", label: "Send Email" },
+          ].map(({ Icon, href, label }) => (
             <a
-              key={i}
+              key={label}
               href={href}
+              aria-label={label}
               target="_blank"
               rel="noreferrer"
               className="w-9 h-9 rounded-lg glass flex items-center justify-center hover:text-neon-cyan transition-colors"
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4" aria-hidden="true" />
             </a>
           ))}
         </div>

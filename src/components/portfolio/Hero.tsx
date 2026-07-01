@@ -32,9 +32,9 @@ const quickStats = [
 ];
 
 const socialLinks = [
-  { Icon: Github, href: "https://github.com/avanishtatat" },
-  { Icon: Linkedin, href: "https://www.linkedin.com/in/avanishtiwari18" },
-  { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com" },
+  { Icon: Github, href: "https://github.com/avanishtatat", label: "Visit Github Profile" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/in/avanishtiwari18", label: "Visit LinkedIn Profile" },
+  { Icon: Mail, href: "mailto:avanisht.at.at@gmail.com", label: "Send Email" },
 ];
 
 const Hero = () => {
@@ -170,18 +170,20 @@ const Hero = () => {
           >
             <a
               href="#projects"
+              aria-label="View Projects Section"
               className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-primary text-primary-foreground font-semibold hover:shadow-neon-cyan transition-all duration-300 hover:scale-105"
             >
               View Projects
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
 
             <a
               href="/Avanish_Tiwari_Full_Stack_Developer_Resume.pdf"
+              aria-label="Download Avanish Tiwari Resume PDF"
               download
               className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full glass neon-border font-semibold hover:bg-muted/50 transition-all duration-300"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4" aria-hidden="true" />
               Download Resume
             </a>
           </motion.div>
@@ -196,15 +198,16 @@ const Hero = () => {
   </span>
   <div className="h-px w-10 bg-border" />
 
-  {socialLinks.map(({ Icon, href }, i) => (
+  {socialLinks.map(({ Icon, href, label }) => (
     <a
-      key={i}
+      key={label}
       href={href}
+      aria-label={label}
       target="_blank"
       rel="noreferrer"
       className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:text-neon-cyan hover:shadow-neon-cyan transition-all duration-300 hover:-translate-y-0.5"
     >
-      <Icon className="w-4 h-4" />
+      <Icon className="w-4 h-4" aria-hidden="true" />
     </a>
   ))}
 </motion.div>
@@ -251,15 +254,16 @@ developer.create(value);`}
             </span>
             <div className="h-px w-10 bg-border" />
 
-            {socialLinks.map(({ Icon, href }, i) => (
+            {socialLinks.map(({ Icon, href, label }) => (
               <a
-                key={i}
+                key={label}
                 href={href}
+                aria-label={label}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:text-neon-cyan hover:shadow-neon-cyan transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-4 h-4" aria-hidden="true" />
               </a>
             ))}
           </div>

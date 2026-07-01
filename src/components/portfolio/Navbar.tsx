@@ -1,5 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 import { Menu, X, Code2 } from "lucide-react";
 
 const links = [
@@ -22,13 +27,19 @@ const Navbar = () => {
     if (!target) return;
 
     const navOffset = 96;
-    const top = Math.max(target.getBoundingClientRect().top + window.scrollY - navOffset, 0);
+    const top = Math.max(
+      target.getBoundingClientRect().top + window.scrollY - navOffset,
+      0,
+    );
 
     window.scrollTo({ top, behavior: "smooth" });
     setActive(href);
   };
 
-  const handleNavClick = (event: ReactMouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    event: ReactMouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     event.preventDefault();
     setActive(href);
     window.history.replaceState(null, "", href);
@@ -45,7 +56,10 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (window.location.hash && links.some((l) => l.href === window.location.hash)) {
+    if (
+      window.location.hash &&
+      links.some((l) => l.href === window.location.hash)
+    ) {
       setActive(window.location.hash);
     }
 
@@ -61,7 +75,10 @@ const Navbar = () => {
     };
 
     const onHashChange = () => {
-      if (window.location.hash && links.some((l) => l.href === window.location.hash)) {
+      if (
+        window.location.hash &&
+        links.some((l) => l.href === window.location.hash)
+      ) {
         setActive(window.location.hash);
       }
     };
@@ -106,11 +123,15 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" onClick={(event) => handleNavClick(event, "#home")} className="flex items-center gap-2 group">
+        <a
+          href="#home"
+          onClick={(event) => handleNavClick(event, "#home")}
+          className="flex items-center gap-2 group"
+        >
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-primary blur-md opacity-60 group-hover:opacity-100 transition-opacity" />
             <div className="relative w-9 h-9 rounded-lg bg-background border border-border flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-neon-cyan" />
+              <Code2 className="w-5 h-5 text-neon-cyan" aria-hidden="true" />
             </div>
           </div>
           <span className="font-display font-bold text-lg tracking-tight">
@@ -125,8 +146,11 @@ const Navbar = () => {
                 href={l.href}
                 onClick={(event) => handleNavClick(event, l.href)}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors ${
-                  active === l.href ? "text-neon-cyan" : "text-muted-foreground hover:text-foreground"
+                  active === l.href
+                    ? "text-neon-cyan"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
+                aria-label={l.label}
               >
                 {l.label}
                 {active === l.href && (
@@ -152,15 +176,18 @@ const Navbar = () => {
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden w-10 h-10 rounded-lg glass flex items-center justify-center"
-          aria-label="Menu"
+          aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {open ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
         </button>
       </div>
 
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
