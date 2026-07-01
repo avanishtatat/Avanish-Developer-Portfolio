@@ -146,7 +146,7 @@ const Navbar = () => {
           onClick={(event) => handleNavClick(event, "#contact")}
           className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-gradient-primary text-primary-foreground font-medium text-sm hover:shadow-neon-cyan transition-all duration-300 hover:scale-105"
         >
-          Hire Me
+          Let's Connect
         </a>
 
         <button
