@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -6,8 +6,9 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-neon-purple/5 to-transparent pointer-events-none" />
       <div className="container relative py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="font-mono text-sm text-muted-foreground text-center md:text-left">
-          © {new Date().getFullYear()} <span className="neon-text font-semibold">Avanish Tiwari</span>.
-          Crafted with <Heart className="inline w-3.5 h-3.5 text-neon-pink fill-neon-pink mx-0.5" /> & lots of coffee.
+          © {new Date().getFullYear()}{" "}
+          <span className="neon-text font-semibold">Avanish Tiwari</span>.
+          Designed and built with React & Tailwind CSS.
         </div>
 
         <div className="flex items-center gap-3">
