@@ -35,5 +35,6 @@ export const contactLinks = [
     Icon: MapPin,
     title: "Location",
     value: "India",
+    href: "https://www.google.com/maps/place/India",
   },
 ];
