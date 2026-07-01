@@ -44,7 +44,7 @@ const Navbar = () => {
     setActive(href);
     window.history.replaceState(null, "", href);
 
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    const isMobile = window.matchMedia("(max-width: 1023px)").matches;
     if (isMobile) {
       setOpen(false);
       // Wait for mobile menu collapse so scrolling lands on the right section.
@@ -139,7 +139,7 @@ const Navbar = () => {
           </span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -168,14 +168,14 @@ const Navbar = () => {
         <a
           href="#contact"
           onClick={(event) => handleNavClick(event, "#contact")}
-          className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-gradient-primary text-primary-foreground font-medium text-sm hover:shadow-neon-cyan transition-all duration-300 hover:scale-105"
+          className="hidden lg:inline-flex items-center px-5 py-2 rounded-full bg-gradient-primary text-primary-foreground font-medium text-sm hover:shadow-neon-cyan transition-all duration-300 hover:scale-105"
         >
           Let's Connect
         </a>
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden w-10 h-10 rounded-lg glass flex items-center justify-center"
+          className="lg:hidden w-10 h-10 rounded-lg glass flex items-center justify-center"
           aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
@@ -191,7 +191,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden glass-strong"
+            className="lg:hidden overflow-hidden glass-strong"
           >
             <ul className="container py-4 flex flex-col gap-1">
               {links.map((l) => (
